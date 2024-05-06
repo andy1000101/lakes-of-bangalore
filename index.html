@@ -6,32 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Lakes of Bangalore</title>
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
 
+        .image {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 34px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
-        <h1>Lakes of Bangalore</h1> 
+        <h1>Lakes of Bangalore</h1>
     </header>
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="lakes-alt.html">Lakes</a>
+        <a href="lakes.html">Lakes</a>
         <a href="hyacinth.html">Water Hyacinth</a>
         <a href="community.html">Community</a>
     </nav>
 
-    <section id="hero">
-        <img src="image-resources/ulsoor.png" alt="Hero Image" width="100%">
-    </section>
+    <div class="container">
+        <img class="image" src="image-resources/ulsoor-lake-main.jpg" alt="Ulsoor Lake">
+        <div class="text">Welcome to Lakes of Bangalore! A platform that aims to empower communities to protect water resources through real-time monitoring, data collection and mapping of invasive water hyacinth.</div>
+    </div>
 
-    <section id="about-short">
-        <p>Welcome to Bangalore Lakes Monitoring! Our platform aims to provide real-time updates and insights on the
-            condition and conservation efforts of lakes in Bangalore.</p>
-    </section>
-    
-    <footer>
+
+    <footer id="short">
         <p>2024 Lakes of Bangalore</p>
     </footer>
 

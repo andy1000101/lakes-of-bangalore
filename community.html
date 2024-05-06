@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-option {
+            padding-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        td {
+            font-family: Arial, sans-serif;
+        }
+
+        td:hover {
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+
+        .highlighted {
+            background-color: #78B8BF;
+            color: black;
+            font-weight: bold;
+        }
+
+        .icon-row {
+            display: flex;
+            justify-content: space-around;
+            /* Adjust as needed */
+            align-items: center;
+        }
+
+        .icon-item {
+            text-align: center;
+        }
+
+        .icon-item img {
+            width: 50px;
+            /* Adjust size as needed */
+            height: 50px;
+            /* Adjust size as needed */
+        }
+        p {
+            padding-left: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Lakes of Bangalore</h1>
+    </header>
+
+    <nav>
+        <a href="main.html">Home</a>
+        <a href="lakes-alt.html">Lakes</a>
+        <a href="hyacinth.html">Water Hyacinth</a>
+        <a href="community.html">Community</a>
+    </nav>
+
+    <main>
+        <!-- calendar -->
+        <h2>Upcoming Events</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody id="calendar-body">
+
+            </tbody>
+        </table>
+
+        <script>
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = today.getMonth();
+
+            function generateCalendar(year, month) {
+                const firstDayOfMonth = new Date(year, month, 1);
+                const lastDayOfMonth = new Date(year, month + 1, 0);
+                const daysInMonth = lastDayOfMonth.getDate();
+                const startingDayOfWeek = firstDayOfMonth.getDay();
+
+                const calendarBody = document.getElementById('calendar-body');
+                calendarBody.innerHTML = '';
+
+                let date = 1;
+
+                for (let i = 0; i < 6; i++) {
+                    const row = document.createElement('tr');
+
+                    for (let j = 0; j < 7; j++) {
+                        if (i === 0 && j < startingDayOfWeek) {
+                            const cell = document.createElement('td');
+                            row.appendChild(cell);
+                        } else if (date > daysInMonth) {
+                            break;
+                        } else {
+                            const cell = document.createElement('td');
+                            cell.textContent = date;
+                            row.appendChild(cell);
+                            date++;
+                        }
+                    }
+
+                    calendarBody.appendChild(row);
+                }
+
+                // Highlight random cells
+                highlightRandomCells();
+            }
+
+            function highlightRandomCells() {
+                const cells = document.querySelectorAll('td');
+                const randomIndices = [];
+                while (randomIndices.length < 2) {
+                    const randomIndex = Math.floor(Math.random() * cells.length);
+                    if (!randomIndices.includes(randomIndex)) {
+                        randomIndices.push(randomIndex);
+                    }
+                }
+
+                randomIndices.forEach(index => {
+                    cells[index].classList.add('highlighted');
+                });
+            }
+
+            generateCalendar(year, month);
+        </script>
+
+        <h2>Contact the Community</h2>
+        <!-- testing icon display-->
+        <div class="icon-row">
+            <div class="icon-item">
+                <h3>WhatsApp</h3>
+                <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener noreferrer">
+                    <img src="image-resources/whatsapp-icon.png" alt="WhatsApp Icon" width="50"> </a>
+                <p>Updates, Events, News</p>
+            </div>
+            <div class="icon-item">
+                <h3>Discord</h3>
+                <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener noreferrer">
+                    <img src="image-resources/discord-icon.png" alt="Discord Icon" width="50"></a>
+                <p>Community, Data, Discuss</p>
+            </div>
+            <div class="icon-item">
+                <h3>Instagram</h3>
+                <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener noreferrer">
+                    <img src="image-resources/instagram-icon.png" alt="Instagram Icon" width="50"></a>
+                <p>News, Data, Information</p>
+            </div>
+        </div>
+        <p>Do consider joining some of our social channels if you are interested in being involved further with lake conservation or interacting with the community.</p>
+        <p>Join the WhatsApp broadcast channel to get updates on lakes in the city, receive notifications about upcoming events and news.</p>
+        <p>The discord server is a forum for the community to take part in discussions and share information, hyacinth sightings and other lake related info. Join the discord server to interact with other people in the community. </p>
+        <p>Follow our instagram page for news and updates. Look out for collaborations, workshops and other exciciting events happening around the lakes in Bangalore.</p>
+        <br> 
+    </main>
+
+    <footer>
+        <p>2024 Lakes of Bangalore</p>
+    </footer>
+</body>
+
+</html>

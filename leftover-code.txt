@@ -1,0 +1,30 @@
+        <section id="contact-options">
+
+            <div class="contact-option">
+                <h3>Discord</h3>
+                <p>Join our Discord server to connect with the community, interact and share findings with other lake
+                    enthusiasts!</p>
+                <a href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" target="_blank" rel="noopener noreferrer">
+                    <img src="image-resources/discord-icon.png" alt="Discord Icon" width="50">
+                </a>
+            </div>
+
+            <div class="contact-option">
+                <h3>WhatsApp</h3>
+                <p>Join our WhatsApp broadcast channel to receive important updates andd be notified about upcoming
+                    events!</p>
+                <a href="https://t.me/YOUR_TELEGRAM_GROUP" target="_blank" rel="noopener noreferrer">
+                    <img src="image-resources/whatsapp-icon.png" alt="WhatsApp Icon" width="50">
+                </a>
+            </div>
+
+            <div class="contact-option">
+                <h3>Facebook</h3>
+                <p>Follow us on Instagram for updates, data and informational content!</p>
+                <a href="https://www.facebook.com/YOUR_FACEBOOK_PAGE" target="_blank" rel="noopener noreferrer">
+                    <img src="image-resources/instagram-icon.png" alt="Instagram Icon" width="50">
+                </a>
+            </div>
+
+
+            
